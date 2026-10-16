@@ -1,7 +1,9 @@
-import { Service, computed, signal } from '@angular/core';
+import { Injectable, computed, signal } from '@angular/core';
 import { Studente } from '../modelli/studente';
 
-@Service()
+@Injectable({
+  providedIn: 'root'
+})
 export class StudentiService {
   private readonly dati = signal<Studente[]>([
     { id: 1, nome: 'Luca Bianchi', classe: '4B', mediaVoti: 7.5 },
